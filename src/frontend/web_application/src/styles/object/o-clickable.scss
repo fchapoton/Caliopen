@@ -1,3 +1,6 @@
+@import '../common';
+@import '../vendor/bootstrap_foundation-sites';
+
 @mixin o-clickable {
   transition: $co-animation__clickable-transition;
   border-color: $co-color__primary;
@@ -60,9 +63,14 @@
 }
 @mixin o-clickable--button {
   display: inline-block;
-  padding: 0 1rem;
+  padding: 0 map_get($co-margin_, xsmall);
   line-height: $co-component__height;
   white-space: nowrap;
+
+  @include breakpoint(medium) {
+    padding-left: map_get($co-margin_, small);
+    padding-sight: map_get($co-margin_, small);
+  }
 
   &:hover {
     color: $co-color__clickable-text--hover;
